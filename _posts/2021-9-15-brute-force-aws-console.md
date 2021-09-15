@@ -1,7 +1,7 @@
 ---
 title: How to brutefore AWS console sign-in
 author: Naikordian
-date: 2021-09-15 10:00:00 -0500
+date: 2021-09-15 10:34:00 -0500
 categories: [Reseach,Cloud]
 tags: [AWS]
 ---
@@ -82,10 +82,12 @@ print(response.text)
 You can use a Rhino Security Labs' research [Using AWS Account ID’s for IAM User](https://rhinosecuritylabs.com/aws/aws-iam-user-enumeration/) or Pacu module `iam__enum_users` to enumerate usernames.
 
 ## Brute force password
+
 ### Requirements
 - AWS account id
 - Console username
 - Password wordlist
+
 ### Prepare a wordlist
 if you have a permission `iam:GetAccountPasswordPolicy` or you already know the target account's password policy you should follow that policy
 but if you don't I recommend using the default policy as a guideline.
@@ -144,7 +146,7 @@ if __name__ == '__main__':
                 )
         if '"result":"SUCCESS"' in response.text:
             print(response.text)
-			print("="*20)
+            print("="*20)
             print("Passwrod: ", password)
             break
 ```
